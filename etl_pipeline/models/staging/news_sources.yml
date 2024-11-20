@@ -1,0 +1,8 @@
+
+sources: 
+  - name: news
+    database: news_db
+    schema: news_schema
+    tables: 
+      - name: articles_data
+        
