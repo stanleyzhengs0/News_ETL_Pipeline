@@ -28,9 +28,6 @@ def load_data_to_snowflake(data, table_name):
     #convert Dataframe to tuple to insert to snowflake
     rows_to_insert = [tuple(row) for row in df.to_numpy()]
 
-    # for col, dtype in df.dtypes.items():
-    #     print(f"Column: {col}, Type: {type(dtype)}")
-
     # print(', '.join([col for col in df.columns]))
     
 
@@ -66,13 +63,10 @@ def load_data_to_snowflake(data, table_name):
     """, rows_to_insert)
 
 
-
-
-
 if __name__ == "__main__":
 
     pg_data = extract_data_from_postrgres()
-    load_data_to_snowflake(pg_data, 'test1')
+    load_data_to_snowflake(pg_data, 'articles_data')
 
    
 
